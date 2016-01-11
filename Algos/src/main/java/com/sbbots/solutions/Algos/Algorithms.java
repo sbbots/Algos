@@ -118,9 +118,29 @@ public class Algorithms {
 		return arr;
 	}
 
-	public int[] quickSort(int[] arr) {
-		// TODO Auto-generated method stub
+	public int[] quickSort(int[] arr, int start, int end) {
+		if (start < end) {
+			int pIndex = partition(arr, start, end);
+			quickSort(arr, start, pIndex - 1);
+			quickSort(arr, pIndex + 1, end);
+		}
 		return arr;
+	}
+
+	public int partition(int[] arr, int start, int end) {
+
+		int pivot = arr[end];
+		int pIndex = start;
+		int i = start;
+		while (i < end) {
+			if (arr[i] <= pivot) {
+				swap(arr, i, pIndex);
+				pIndex++;
+			}
+			i++;
+		}
+		swap(arr, pIndex, end);
+		return pIndex;
 	}
 
 	public int[] mergeSort(int[] arr) {

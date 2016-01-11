@@ -55,22 +55,23 @@ public class TestAlgorithms {
 			Assert.assertEquals(arr[i],exp[i]);
 		}
 	}
-	
+
 	@Test
 	public void testQuickSort() {
 
 		// Input
-		int[] arr = { 5,1,8,7,-5 };
+		int[] arr = { 5, 1, 8, 7, -5 };
 		// Expected
-		int[] exp = { -5,1,5,7,8 };
+		int[] exp = { -5, 1, 5, 7, 8 };
 		// Output
 		Algorithms algo = new Algorithms();
-		arr = algo.quickSort(arr);
+		arr = algo.quickSort(arr, 0, arr.length-1);
 
 		for (int i = 0; i < arr.length; i++) {
-			Assert.assertEquals(arr[i],exp[i]);
+			Assert.assertEquals(arr[i], exp[i]);
 		}
 	}
+
 	@Test
 	public void testMergeSort() {
 
@@ -86,5 +87,8 @@ public class TestAlgorithms {
 			Assert.assertEquals(arr[i],exp[i]);
 		}
 	}
+	
+	
+	
 
 }
