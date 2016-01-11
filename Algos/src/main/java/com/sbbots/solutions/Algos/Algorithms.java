@@ -102,4 +102,30 @@ public class Algorithms {
 		
 	}
 
+	public int[] insertionSort(int[] arr) {
+	
+		for (int i = 1; i < arr.length; i++) {
+     		/**
+			 * i =0, j =0 ; Array : {5,1,8,7,-5}
+			 */
+			for (int j = i; j >0 ; j--) {
+				if (arr[j] < arr[j-1]) {
+					swap(arr, j, j-1);
+				}
+			}		
+		}
+	
+		return arr;
+	}
+
+	public int[] quickSort(int[] arr) {
+		// TODO Auto-generated method stub
+		return arr;
+	}
+
+	public int[] mergeSort(int[] arr) {
+		// TODO Auto-generated method stub
+		return arr;
+	}
+
 }

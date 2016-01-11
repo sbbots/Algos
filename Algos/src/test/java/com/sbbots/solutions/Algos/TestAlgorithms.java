@@ -39,4 +39,52 @@ public class TestAlgorithms {
 			Assert.assertEquals(arr[i],exp[i]);
 		}
 	}
+	
+	@Test
+	public void testInsertionSort() {
+
+		// Input
+		int[] arr = { 5,1,8,7,-5 };
+		// Expected
+		int[] exp = { -5,1,5,7,8 };
+		// Output
+		Algorithms algo = new Algorithms();
+		arr = algo.insertionSort(arr);
+
+		for (int i = 0; i < arr.length; i++) {
+			Assert.assertEquals(arr[i],exp[i]);
+		}
+	}
+	
+	@Test
+	public void testQuickSort() {
+
+		// Input
+		int[] arr = { 5,1,8,7,-5 };
+		// Expected
+		int[] exp = { -5,1,5,7,8 };
+		// Output
+		Algorithms algo = new Algorithms();
+		arr = algo.quickSort(arr);
+
+		for (int i = 0; i < arr.length; i++) {
+			Assert.assertEquals(arr[i],exp[i]);
+		}
+	}
+	@Test
+	public void testMergeSort() {
+
+		// Input
+		int[] arr = { 5,1,8,7,-5 };
+		// Expected
+		int[] exp = { -5,1,5,7,8 };
+		// Output
+		Algorithms algo = new Algorithms();
+		arr = algo.mergeSort(arr);
+
+		for (int i = 0; i < arr.length; i++) {
+			Assert.assertEquals(arr[i],exp[i]);
+		}
+	}
+
 }
