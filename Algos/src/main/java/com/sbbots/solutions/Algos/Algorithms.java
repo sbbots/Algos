@@ -1,15 +1,80 @@
 package com.sbbots.solutions.Algos;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.Set;
+
 /**
  * Algorithms!
  * 
  */
 public class Algorithms {
-	public static void main(String[] args) {
-		System.out.println("Hello World!");
+	 public static void main(String args[] ) throws Exception {
+	        
+	        
+		
+
+		
 
 	}
 
+	
+	
+	public static String firstRepeatedWord(String s) {
+
+    HashMap<String, Integer> hm = new HashMap<String, Integer>();
+        
+        //Clean String
+        s = s.replaceAll("\\t", " ");
+        s = s.replaceAll(",", " ");
+        s = s.replaceAll(":", " ");
+        s = s.replaceAll(";", " ");
+        s = s.replaceAll("-", " ");
+//        s = s.replaceAll(".", " ");
+        ArrayList<String> arr= new ArrayList<String>();
+        
+
+        while(s.indexOf(" ")!=-1) {
+            int index = s.indexOf(" ");
+            arr.add(s.substring(0,index));
+            s = s.substring(index+1);
+        }
+        
+        String result = "";
+        int len = arr.size();
+        if(len < 1) {
+            return " ";
+        }
+        
+        //Store it in a hashmap
+        for(int x = 0; x < len; x++) {    
+        	String key = arr.get(x);
+            if(hm!=null && hm.get(key)!=null) {
+            	Integer value = hm.get(key);
+            	value++;
+            	hm.put(key, value);
+            } else{
+            	hm.put(key, 0);
+            }
+        }
+        
+        Iterator it = hm.entrySet().iterator();
+        
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry) it.next();
+            
+            Integer x = (Integer) pair.getValue();
+             if(x!=null && x.equals(1)){
+               return (String) pair.getKey();
+           }  
+        }
+        return result;
+    }
+	
 	/**
 	 * Array : {8,7,6,5,4}
 	 * 
